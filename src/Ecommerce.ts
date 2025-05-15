@@ -117,7 +117,7 @@ class FurnitureProduct extends Product implements ProductsInterface {
   }
 }
 
-abstract class User {
+abstract class EcommerceUser {
   name: string;
   gender: string;
   email: string;
@@ -136,19 +136,19 @@ abstract class User {
   }
 }
 
-class Admin extends User {
+class Admin extends EcommerceUser {
   manageUsers(): void {
     console.log(`${this.name} is managing users.`);
   }
 }
 
-class Seller extends User {
+class Seller extends EcommerceUser {
   listProduct(product: Product): void {
     console.log(`${this.name} listed product: ${product.name}`);
   }
 }
 
-class Customer extends User {
+class Customer extends EcommerceUser {
   addToCart(product: Product, cart: Cart, weight: number): void {
     cart.addProduct(product, weight);
   }
